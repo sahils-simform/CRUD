@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>
+        CRUD
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class = main-container>
+        <div class="form-container">
+            <legend><h1> Enter Your Details</h1></legend>
+            <form  autocomplete="off">
+                <div>
+                    <label>Product Id*</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
+                    <input type="number" name="productId" id="productId" placeholder="Product Id" required>
+                </div>
+                <div>
+                    <label>Product Name*</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
+                    <input type="text" name="productName" id="productName" placeholder="Name" required>
+                </div>
+                <div>
+                    <label for="product-image">Product Image:</label>
+                    <input type="file" name="image" id="image" accept="image/*" placeholder="Add Your Image" required>
+                    <img id="image-preview" src="" data-src="">
+                    <p id="errorMsg"></p>
+                </div>
+                <div>
+                    <label>Price</label>
+                    <input type="number" name="price" id="price" placeholder="Enter Price" required>
+                </div>
+                <div>
+                    <label>Discription</label>
+                    <input type="text" name="discription" id="discription" placeholder="Discription" required>
+                </div>
+                <div  class="form-action-buttons">
+                    <input type="submit" value="Submit" id="submit">
+                </div>
+            </form>
+        </div>
+
+        <div class="list-container">
+            <div class="search-sort-container">
+                <input type="number" id="search" placeholder="Search By Product ID ">
+                <select id="sort">
+                <option value="sortId">Sort by Product ID</option>
+                  <option value="name">Sort by Product Name</option>
+                  <option value="price">Sort by Price</option>
+                </select>
+            </div>
+            <div class="container-fluid">
+                <table class="list">
+                    <thead>
+                        <tr>
+                            <th>Product Id</th>
+                            <th>Product Name</th>
+                            <th>Image</th>
+                            <th>Price</th>
+                            <th>Discription</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="employeeList">
+
+                    </tbody>
+                </table>
+            </div>    
+        </div>    
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit</title>
+    <style>
+         body{
+            background: rgb(214,147,176);
+            background: radial-gradient(circle, rgba(214,147,176,1) 0%, rgba(107,156,214,1) 100%);
+        }
+
+        .main-container{
+            display: flex;
+        }
+
+        #image-preview{
+            display: block;
+            max-width: 180px;
+            margin: 0 auto;
+            padding-top: 10px;
+        }
+
+        .form-container {
+            border-radius: 5px;
+            margin-top: 4rem;
+            margin-left: 35rem;
+            background: rgb(180,162,58);
+            background: linear-gradient(90deg, rgb(185, 167, 66) 0%, rgb(220, 111, 109) 70%, rgba(255,195,81,1) 100%);
+            padding: 1.5rem;
+            width: 30%;
+            font-size: 1.3rem;
+        }
+
+        input[type=text], input[type=number] {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 1rem;
+            margin: 1.6rem 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button{
+            font-size: 1.4rem;
+            width: 80%;
+            border-radius: 1.3rem;
+            background-color: rgb(63, 89, 6);
+            color: white;
+            padding: 25px 20px;
+            margin: 8px 0;
+            margin-left: 2.5rem;
+            border: white;
+            /* align-items: center; */
+            cursor: pointer;
+        }
+        
+        label.validation-error{
+            color: red;
+            margin-left: 5px;
+        }
+
+        .hide{
+            display:none;
+        }
+
+        legend{
+        color: white;
+        background-color: rgb(94, 131, 14);
+        text-align: center;
+        padding: 0.1rem 0px 0.1rem 0px;
+        margin: -0.8rem -0.8rem 2rem -0.8rem;
+        border-radius: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class = main-container>
+        <div class="form-container">
+            <legend><h1> Edit Your Details</h1></legend>
+            <form  autocomplete="off">
+                <div>
+                    <label>Product Id*</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
+                    <input type="number" name="productId" id="productId" placeholder="Product Id">
+                </div>
+                <div>
+                    <label>Product Name*</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
+                    <input type="text" name="productName" id="productName" placeholder="Name">
+                </div>
+                <div>
+                    <label for="product-image">Product Image:</label>
+                    <input type="file" name="image" id="image" accept="image/*" placeholder="Add Your Image" required>
+                    <img id="image-preview" src="" data-src="">
+                    <p id="errorMsg"></p>
+                </div>
+                <div>
+                    <label>Price</label>
+                    <input type="number" name="Price" id="price" placeholder="Enter Price">
+                </div>
+                <div>
+                    <label>Discription</label>
+                    <input type="text" name="Discription" id="discription" placeholder="Discription">
+                </div>
+                <div  class="form-action-buttons">
+                    <button class="updateDetails">Update Details</button>
+                </div>
+            </form>
+        </div>
+
+    <script src="edit.js"></script>
+</body>
+
+</html>
